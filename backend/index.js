@@ -7,7 +7,7 @@ const cors = require("cors");
 app.use(
     cors({
       credentials: true,
-      origin: ["https://twitter.netlify.app/"],
+      origin: [ process.env.FRONTEND_ORIGIN ],
     })
   );
 //
@@ -21,7 +21,6 @@ require("dotenv").config();
 var multer = require('multer');
 var upload = multer();
 app.use(express.json());
-// app.use(upload.array()); 
 
 // routes
 
