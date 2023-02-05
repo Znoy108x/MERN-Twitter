@@ -1,9 +1,7 @@
 const mongoose = require("mongoose")
-const db_name = "Twitter"
-const mongoose_url = `mongodb+srv://abhay:abhay@cluster0.i8prg.mongodb.net/${db_name}?retryWrites=true&w=majority`
 const connectToMongoose = () =>{
-    mongoose.connect(mongoose_url , () =>{
-        console.log(`Connected to the ${db_name}`.rainbow)
+    mongoose.connect(`${process.env.MONGO_DB_URL}` , () =>{
+        console.log(`Connected to the ${process.env.DB_NAME}`.rainbow)
     })
 }
 module.exports =  connectToMongoose
